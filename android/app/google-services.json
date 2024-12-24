@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "758243912968",
+    "project_id": "ocr2-f46a1",
+    "storage_bucket": "ocr2-f46a1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758243912968:android:3f514d1cf6a5a43cd590bd",
+        "android_client_info": {
+          "package_name": "com.oumaya.ocr_application2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0W27iyg9VQZXcD7kQliOnTvdVM3SA3oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

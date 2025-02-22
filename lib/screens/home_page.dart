@@ -1,29 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class HomePage extends StatefulWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   State<HomePage> createState() => _HomePageState();
-// }
-
-// class _HomePageState extends State<HomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Home Page'),
-//         actions: [
-//           IconButton(
-//             onPressed: () {},
-//             icon: const Icon(Icons.logout),
-//           )
-//         ],
-//       ),
-//       drawer: Drawer(),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -131,6 +105,18 @@ class _HomePageState extends State<HomePage> {
               title: const Text('Settings'),
               onTap: () => _navigateToPage('/settings'),
             ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              trailing: const Icon(Icons.arrow_circle_right),
+              title: const Text('text recognizer'),
+              onTap: () => _navigateToPage('/textRecognizer'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              trailing: const Icon(Icons.arrow_circle_right),
+              title: const Text('handwriting app'),
+              onTap: () => _navigateToPage('/handwritingApp'),
+            ),
           ],
         ),
       ),
@@ -145,8 +131,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Action pour le bouton d'exploration
-                Navigator.pushNamed(context, '/ocr'); // Navigation vers OCR
+                 Navigator.pushNamed(context, '/textRecognizer'); // Navigate to OCR page
               },
               child: const Text('Lancer OCR'),
             ),

@@ -45,5 +45,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+        <string>Camera access is needed for OCR scanning</string>
+   <key>NSPhotoLibraryUsageDescription</key>
+    <string>Photo library access is needed for image selection</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+<true/>
+<key>UIFileSharingEnabled</key>
+<true/>
 </dict>
 </plist>

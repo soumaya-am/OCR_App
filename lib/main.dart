@@ -1,18 +1,26 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:ocr_application2/screens/text_recognition_app.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 import 'screens/login_page.dart';
+import 'screens/profile_page.dart';
 import 'screens/register_page.dart';
 import 'screens/home_page.dart';
-import 'screens/text_detector_view.dart';
-import 'screens/text_recognition_app.dart';
-import 'screens/text_recognizer.dart';
+import 'screens/saved_scans_pages.dart';
+import 'screens/scan_history_page.dart';
+import 'screens/settings_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await requestCameraPermission(); // Request camera permission
-  runApp(const MyApp());
+  await requestCameraPermission(); // Request camera permission
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 // Function to request camera permissions
@@ -44,23 +52,39 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Agdour',
-      theme: _darkModeEnabled ? ThemeData.dark() : ThemeData.light(),
-      routes: {
-        '/login': (context) => const LoginPage(),
-        '/register': (context) => const RegisterPage(),
-        '/home': (context) => const HomePage(),
-        //'/ocr': (context) => const OcrPage(),
-        '/ocr': (context) => const TextRecognitionApp(),
-        '/textRecognizer1': (context) => const TextRecognizerView(),
-        '/textRecognizer': (context) => const TextRecognizerPage(),
-        
-        
-        
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'OCR App',
+          theme: themeProvider.isDarkMode
+              ? ThemeData.dark().copyWith(
+                  primaryColor: Colors.blueGrey,
+                  colorScheme: ColorScheme.fromSwatch(
+                    primarySwatch: Colors.blueGrey,
+                    brightness: Brightness.dark,
+                  ),
+                )
+              : ThemeData.light().copyWith(
+                  primaryColor: Colors.blue,
+                  colorScheme: ColorScheme.fromSwatch(
+                    primarySwatch: Colors.blue,
+                    brightness: Brightness.light,
+                  ),
+                ),
+          routes: {
+            '/login': (context) => const LoginPage(),
+            '/profile': (context) => const ProfilePage(),
+            '/settings': (context) => const SettingsPage(),
+            '/register': (context) => const RegisterPage(),
+            '/home': (context) => const HomePage(),
+            '/ocr': (context) => const OCRApp(),
+            '/history': (context) => const ScanHistoryPage(),
+            '/saved': (context) => const SavedScansPage(),
+          },
+          initialRoute: '/login',
+        );
       },
-      initialRoute: '/login',
     );
   }
 }

@@ -12,7 +12,20 @@
           "package_name": "com.oumaya.ocr_application2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "758243912968-c93ha70germhu9pbv6okqtplmv17sso3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oumaya.ocr_application2",
+            "certificate_hash": "b833f9eac38ebf81cc8cc9895aac703ff4c4562d"
+          }
+        },
+        {
+          "client_id": "758243912968-2h0j3vilkbkug1l5i44khuvgi0cu52q1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA0W27iyg9VQZXcD7kQliOnTvdVM3SA3oE"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758243912968-2h0j3vilkbkug1l5i44khuvgi0cu52q1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "758243912968-r6k5ujlppe4rdjfnf7992iao9o0mvud3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.oumaya.ocrApplication2"
+              }
+            }
+          ]
         }
       }
     }
